@@ -1,0 +1,23 @@
+{
+  "name": "agent-skills-dotnet-demo",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "dotnet.defaultSolution": "src/**/*.sln",
+        "python.defaultInterpreterPath": "/usr/local/python/current/bin/python"
+      }
+    }
+  },
+  "postCreateCommand": "dotnet --info && python --version && pip --version",
+  "remoteUser": "vscode"
+}
